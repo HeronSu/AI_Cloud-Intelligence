@@ -30,7 +30,7 @@ So, let's start exploring the world of AI and Intelligent Computing!
 
 > 本阶段的主要任务，就是建立扎实的 **Linux 基础与云计算运维能力**，为后续学习云计算、虚拟化、容器、Kubernetes 以及 AI 云计算相关技术打下基础。
 
-具体详见：[[01-Linux-Cloud-Ops-Junior]]
+具体详见：[[01-Linux-Cloud-Ops-Junior.md]]
 
 
 
