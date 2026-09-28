@@ -34,14 +34,14 @@
 
 
 -  硬件兼容性根据当前 VMware Workstation 的版本来进行选择
-![image\.png|481](assets/image%2031.png)
+![image\.png|474](assets/image%2031.png)
 
 
 
 
 
 - 选择安装来源：选择稍后安装操作系统 
-![image\.png|488](assets/image%2033.png)
+![image\.png|474](assets/image%2033.png)
 
 > [!caution]
 > **不要选择安装程序光盘镜像文件（iso），始终面向服务器，中间的⼀些配置都需要我们自己去设置 **
@@ -70,13 +70,13 @@
     - 内核数量：⼀颗 CPU 的核⼼数 
     - 对于操作系统来说，CPU 的数量不是看处理器数量，也不是看内核数量，⽽是看 “处理器数量 \* 内核数量”
 
-![image\.png|498](assets/image%209.png)
+![image\.png|471](assets/image%209.png)
 
 
 
 - 虚拟机内存根据需要进行选择，同样想要系统运行的更流畅，可以适当给多一点，后期也可以进行调整。
 
-![image\.png|494](assets/image%2011.png)
+![image\.png|471](assets/image%2011.png)
 
 
 
@@ -121,7 +121,6 @@
 	- 如果说需要创建虚拟机之后对其进行迁移，选择将虚拟磁盘拆分成多个文件
 
 ![image\.png|470](assets/image%2042.png)
-
 
 
 - 这就是刚才创建的磁盘文件
