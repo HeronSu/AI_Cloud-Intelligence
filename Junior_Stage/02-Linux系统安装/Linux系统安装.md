@@ -34,14 +34,14 @@
 
 
 -  硬件兼容性根据当前 VMware Workstation 的版本来进行选择
-![image\.png|481](assets/image%2031.png)
+![image\.png|456](assets/image%2031.png)
 
 
 
 
 
 - 选择安装来源：选择稍后安装操作系统 
-![image\.png|488](assets/image%2033.png)
+![image\.png|458](assets/image%2033.png)
 
 > [!caution]
 > **不要选择安装程序光盘镜像文件（iso），始终面向服务器，中间的⼀些配置都需要我们自己去设置 **
@@ -51,14 +51,14 @@
 - 根据实际需要来选择操作系统类型
     - 如果要安装 Windows 虚拟机，就选择 Microsoft Windows(W)，然后再选择你要安装Windows 系统的版本，如 Windows 11 x64 
     - 如果要安装 Linux 虚拟机，就选择 Linux(L)，然后选择对应 Linux 的系统版本，例如例如 Red Hat Enterprise Linux 9，CentOS 8 64 位 
-![image\.png|471](assets/image%2023.png)
+![image\.png|447](assets/image%2023.png)
 
 
 
 
 - 自定义虚拟机名称，路径注意不要在中文路径下，创建⼀个文件夹，虚拟机所有文件都在此文件夹下。**建议不要将Linux的ISO文件放在该文件夹下**，该文件夹下只放与虚拟机有关的文件，镜像属于外部文件。
 
-![image\.png|465](assets/image%2026.png)
+![image\.png|445](assets/image%2026.png)
 
 > [!tip]
 > 虚拟机本质上就是⼀堆文件，Linux一切皆文件，所以放在文件夹下，既方便查找和移动虚拟机至其他 PC 上进行使用，又方便后期删除。
@@ -70,13 +70,13 @@
     - 内核数量：⼀颗 CPU 的核⼼数 
     - 对于操作系统来说，CPU 的数量不是看处理器数量，也不是看内核数量，⽽是看 “处理器数量 \* 内核数量”
 
-![image\.png|498](assets/image%209.png)
+![image\.png|435](assets/image%209.png)
 
 
 
 - 虚拟机内存根据需要进行选择，同样想要系统运行的更流畅，可以适当给多一点，后期也可以进行调整。
 
-![image\.png|494](assets/image%2011.png)
+![image\.png|427](assets/image%2011.png)
 
 
 
@@ -85,21 +85,21 @@
     - NAT 网络：虚拟机是可以访问 Internet 的，将虚拟机的内部 ip 地址转化为宿主机的物理网卡的IP地址出去，只要宿主机可以上网，NAT模式下的虚拟机也⼀定可以上网。 
     - 仅主机模式网络：如果都是仅主机模式下的虚拟机，虚拟机之间是都可以通信的，但无法访问，无法访问外部网络。
 
-![image\.png|451](assets/image%2030.png)
+![image\.png|433](assets/image%2030.png)
 
 
 
 
 - 根据实际需要进行选择即可，此处保持默认即可
 
-![image\.png|456](assets/image%2012.png)
+![image\.png|423](assets/image%2012.png)
 
 
 
 - 磁盘类型根据需要进行选择，此处保持默认即可 
     - 如果是真实服务器，那么根据实际插在服务器的磁盘类型进行选择，例如 NVMe⼀般是固态硬盘，性能较好，SATA ⼀般是机械硬盘，存储容量大，根据实际需要进行选择
 
-![image\.png|442](assets/image%2043.png)
+![image\.png|432](assets/image%2043.png)
 
 
 
@@ -117,20 +117,20 @@
 - 磁盘大小选择可以任意，选择将虚拟磁盘存储为单个⽂件，可以适当调整大小
 > 对于虚拟机来说，磁盘是精简配置，⽤多少占用多少空间，200GB不会占用原主机200G的空间
 
-	- 如果说追求性能，选择将虚拟磁盘存储为单个文件
-	- 如果说需要创建虚拟机之后对其进行迁移，选择将虚拟磁盘拆分成多个文件
+- 如果说追求性能，选择将虚拟磁盘存储为单个文件
+- 如果说需要创建虚拟机之后对其进行迁移，选择将虚拟磁盘拆分成多个文件
 
-![image\.png|470](assets/image%2042.png)
+![image\.png|428](assets/image%2042.png)
 
 
 
 - 这就是刚才创建的磁盘文件
-![image\.png|480](assets/image%2036.png)
+![image\.png|435](assets/image%2036.png)
 
 
 
 - 确认配置，创建虚拟机完成
-![image\.png|483](assets/image%2037.png)
+![image\.png|445](assets/image%2037.png)
 
 
 
@@ -140,16 +140,16 @@
 ## 挂载ISO并开启虚拟机
 
 - 编辑虚拟机设置 
-![image\.png|649](assets/image%2032.png)
+![image\.png|602](assets/image%2032.png)
 
 
 
 - 确保启动时连接，选择对应版本的 ISO 镜像 
-![image\.png|656](assets/image%2035.png)
+![image\.png|613](assets/image%2035.png)
 
 
 - 开启虚拟机，进⼊安装 Linux 系统过程
-![image\.png|662](assets/image%2027.png)
+![image\.png|614](assets/image%2027.png)
 
 
 
