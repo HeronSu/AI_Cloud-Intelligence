@@ -9,7 +9,7 @@
 - [01-Linux发展及介绍](Junior_Stage/01-Linux发展及介绍.md)
 - [02-Linux系统安装](Junior_Stage/02-Linux系统安装/Linux系统安装.md)
 - [03-登录Linux系统的多种方式](Junior_Stage/03-登录Linux系统的多种方式/登录Linux系统的多种方式.md)
-- [04-命令提示符及常用命令](04-命令提示符及常用命令.md)
+- [04-命令提示符及常用命令](Junior_Stage/04-命令提示符及常用命令.md)
 
 
 ## 2. 文件管理与文件系统
