@@ -32,7 +32,6 @@ So, let's start exploring the world of AI and Intelligent Computing!
 
 具体详见：[01-Linux-Cloud-Ops-Junior](01-Linux-Cloud-Ops-Junior.md)
 
-#Linux云计算运维初级
 
 
 
@@ -52,7 +51,7 @@ So, let's start exploring the world of AI and Intelligent Computing!
 
 具体详见：[02-Linux-Cloud-Ops-Intermediate](02-Linux-Cloud-Ops-Intermediate)
 
-#Linux云计算运维中级
+
 
 
 
