@@ -7,7 +7,7 @@
 ## 1. Linux基础
 
 - [01-Linux发展及介绍](Junior%20Stage/01-Linux发展及介绍.md)
-- [[Linux系统安装|02-Linux系统安装]]
+- [02-Linux系统安装](Junior%20Stage/Linux系统安装.md)
 - [[登录Linux系统的多种方式|03-登录Linux系统的多种方式]]
 - [[04-命令提示符及常用命令]]
 
