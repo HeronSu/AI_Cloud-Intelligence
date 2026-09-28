@@ -16,8 +16,12 @@
 > 创建新的虚拟机有以下两种⽅式 
 
 - 在主页创建新虚拟机 
+<<<<<<< HEAD
 
 ![image\.png|663](AI云智算/Junior_Stage/02-Linux系统安装/assets/image%202.png)
+=======
+![Junior_Stage/02-Linux系统安装/assets/image\.png|663](AI云智算/Junior%20Stage/02-Linux系统安装/assets/image%202.png)
+>>>>>>> 1ebf7a810eda5b9bf78d27e8fdada9f5d7947326
 
 
 -  在界⾯左上角文件处-------新建虚拟机
