@@ -10,13 +10,13 @@
 # 基于图形化登录
 
 - 下面的就是一个图形化界面
-![[Pasted image 20260913160837.png]]
+![[Pasted image 20260913160837.png]](assets/Pasted%20image%2020260913160837.png)
 
 
 - 服务器如何进行图形化登录？
 依赖于硬件，拿一个显示屏用VGA的线直接连接服务器上的VGA接口，再进行连接，和图形化是差不多的
 
-![[Pasted image 20260913160906.png]]
+![[Pasted image 20260913160906.png]](assets/Pasted%20image%2020260913160906.png)
 
 
 
@@ -77,13 +77,13 @@
 
 - 具体步骤如下：将虚拟机和windows端进行网络互通，虚拟机网络ip地址进行手动修改(自动获取IP地址)，windows虚拟机网络ip进行修改(或者直接ifconfig获取虚拟机ip地址）
 
-![[Pasted image 20260913160945.png|687]]
+![[Pasted image 20260913160945.png|677]](assets/Pasted%20image%2020260913160945.png)
 
 
 
 - 打开windows端cmd，在cmd命令行中输入` `**`ping+ ip地址`**，确认是否互通。输入命令：ssh 用户名@（ip地址）
 
-![[Pasted image 20260913161003.png|677]]
+![[Pasted image 20260913161003.png|666]](assets/Pasted%20image%2020260913161003.png)
 
 > [!Tip]
 注：用户名可以是普通用户，或者是超级用户root（**但需要在创建root用户时勾选允许通过ssh登录**1）
