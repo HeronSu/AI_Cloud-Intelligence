@@ -1,5 +1,5 @@
 # Linux语法三要素
----
+
 - 命令（command）
 - 选项（option）：为了更好的描述这个命令
 - 参数（argument）
@@ -7,7 +7,7 @@
   
 
 # 语法格式
----
+
 - 命令、选项、参数这三个部分，每个部分中间用空格隔开
 ```bash
 ls -l -a #等价于ls -la
@@ -17,9 +17,10 @@ ls -la
 ls --help #代表一个整体，不可拆分
 ```
 
-![[Pasted image 20260914202522.png]]
+![[Pasted image 20260914202522.png]](assets/Pasted%20image%2020260914202522.png)
 
-> [!caution] 注意事项
+> [!caution]
+> 注意事项
 > - 命令、选项、参数这三个部分，每个部分中间用空格隔开，不可连接在一起
 > - **顺序一定是：命令、选项、参数**，顺序错了，命令无法执行
 > - 当出现多个选项时，选项与选项之间空格隔开，也可以合并为一个
@@ -28,7 +29,7 @@ ls --help #代表一个整体，不可拆分
   
 
 # 查看帮助
----
+
 > [!tip]
 > - 不要试图使用记忆去记住一切
 > - 学会使用不同级别的帮助资源
@@ -46,12 +47,12 @@ man (command）
 > [!tip]
 > 这些man帮助手册本质上都是一堆压缩文件，在**`/usr/share/man`**目录下
 
-![[Pasted image 20260914202916.png]]
+![[Pasted image 20260914202916.png]](assets/Pasted%20image%2020260914202916.png)
 
 - 下面呈现了各种命令的帮助手册文件
-![[Pasted image 20260914202926.png]]
+![[Pasted image 20260914202926.png]](assets/Pasted%20image%2020260914202926.png)
 
-![[Pasted image 20260914202933.png]]
+![[Pasted image 20260914202933.png]](assets/Pasted%20image%2020260914202933.png)
 
 
 ```bash
@@ -59,9 +60,9 @@ man (command）
 man 1 znew
 ```
 
-![[Pasted image 20260914203006.png|369]]
+![[Pasted image 20260914203006.png|369]](assets/Pasted%20image%2020260914203006.png)
 
-![[Pasted image 20260914203059.png|677]]
+![[Pasted image 20260914203059.png|677]](assets/Pasted%20image%2020260914203059.png)
 
 > [!tip]
 > `man`帮助手册中是针对不同人群去查看的，有的是给用户看的，有的是给开发者看的，此处不做过多解释
@@ -69,7 +70,7 @@ man 1 znew
   
 
 - 以`date`命令为例，查看`man`帮助手册
-![[Pasted image 20260914203909.png|673]]
+![[Pasted image 20260914203909.png|673]](assets/Pasted%20image%2020260914203909.png)
 
 - `NAME`：解释该命令是用来干什么的。用来打印或者设置系统时间和日期
 ```bash
@@ -136,7 +137,8 @@ EXAMPLES
 
 
 - `man -k` 关键字，根据关键字搜索手册。如果搜索不出来，使用`mandb`命令建立man手册的索引信息
-> [!tip] 如果一个命令不会用，可以通过以下的思路查询
+> [!tip]
+> 如果一个命令不会用，可以通过以下的思路查询
 > 1. 先查询 `--help` ，查看命令的介绍和语法以及选项有哪些
 > 2. 再查询`man`手册，有详细的介绍和选项介绍，有的手册中还记录命令的案例
 > 3. 最后使用info查询，如果man手册没有则使用info手册
