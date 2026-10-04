@@ -1,5 +1,9 @@
+# Linux文件系统与路径
+
 # 📋 Table of Contents
-- [Linux&windows文件系统差异](#linuxwindows文件系统差异)
+- [Linux文件系统与路径](#linux文件系统与路径)
+- [📋 Table of Contents](#-table-of-contents)
+- [Linux\&windows文件系统差异](#linuxwindows文件系统差异)
 - [Linux系统的重要目录](#linux系统的重要目录)
 - [文件命名规则、相对路径与绝对路径](#文件命名规则相对路径与绝对路径)
 	- [文件命名规则](#文件命名规则)
