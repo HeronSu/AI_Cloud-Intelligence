@@ -1,15 +1,6 @@
 [↩️ 返回本阶段首页](../../01-Linux-Cloud-Ops-Junior.md)
 # Linux文件系统与路径
 
-# 📋 Table of Contents
-- [Linux\&windows文件系统差异](#linuxwindows文件系统差异)
-- [Linux系统的重要目录](#linux系统的重要目录)
-- [文件命名规则、相对路径与绝对路径](#文件命名规则相对路径与绝对路径)
-	- [文件命名规则](#文件命名规则)
-	- [pwd](#pwd)
-	- [相对路径与绝对路径](#相对路径与绝对路径)
----
-
 # Linux&windows文件系统差异
 
 - Windows系统结构：C盘和D盘之间相互独立，每一个盘都是一个独立的目录树
