@@ -1,4 +1,4 @@
-[↩️ 返回本阶段首页](../01-Linux-Cloud-Ops-Junior.md)
+[↩️ 返回本阶段首页](../../01-Linux-Cloud-Ops-Junior.md)
 # 命令语法与Linux帮助
 
 # Linux语法三要素

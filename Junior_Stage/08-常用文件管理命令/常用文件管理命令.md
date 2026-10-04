@@ -1,4 +1,4 @@
-[↩️ 返回本阶段首页](../01-Linux-Cloud-Ops-Junior.md)
+[↩️ 返回本阶段首页](../../01-Linux-Cloud-Ops-Junior.md)
 # Linux文件系统与路径
 
 # 📋 Table of Contents
