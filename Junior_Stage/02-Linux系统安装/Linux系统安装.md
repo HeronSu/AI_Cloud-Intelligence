@@ -1,3 +1,4 @@
+# Linux系统安装
 > [!important]
 > 此处演示CentOS 8.4版本的Linux安装过程 ，其他版本的操作系统安装流程也差不多
 
