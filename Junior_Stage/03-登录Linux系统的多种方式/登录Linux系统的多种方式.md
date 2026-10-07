@@ -105,11 +105,11 @@ systemctl  enable --now cockpit.socket
 
 
 - 在浏览器中输入：（ip地址）：9090
-![[Pasted image 20260913161114.png]]
+![[Pasted image 20260913161114.png]](assets/Pasted%20image%20260913161114.png)
 
 
 > [!caution]
-> **CentOS 8\.4版本中，允许root用户登录到该平台，如果此时不允许root用户登录**，又需要root用户通过控制台登录,更改**`/etc/cockpit/disallowed-users`**，删除root
+> **CentOS 8\.4版本中，允许root用户登录到该平台，如果此时不允许root用户登录**，又需要root用户通过控制台登录`/etc/cockpit/disallowed-users`，删除root
 
 ![[Pasted image 20260913161122.png]]
 
