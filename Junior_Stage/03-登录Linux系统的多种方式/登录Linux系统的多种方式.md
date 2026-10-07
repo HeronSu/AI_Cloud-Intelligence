@@ -102,7 +102,7 @@
 ```bash
 systemctl  enable --now cockpit.socket
 ``` 
-
+assets\Pasted image 20260913161114.png
 
 - 在浏览器中输入：（ip地址）：9090
 ![[Pasted image 20260913161114.png]](assets/Pasted%20image%20260913161114.png)
@@ -111,7 +111,7 @@ systemctl  enable --now cockpit.socket
 > [!caution]
 > **CentOS 8\.4版本中，允许root用户登录到该平台，如果此时不允许root用户登录**，又需要root用户通过控制台登录`/etc/cockpit/disallowed-users`，删除root
 
-![[Pasted image 20260913161122.png]]
+![[Pasted image 20260913161122.png]](assets/Pasted%20image%20260913161122.png)
 
 > [!caution]
 **注：生产环境上看不到这种用法，因为图形化、浏览器、命令行管理Linux系统，效率最高的是命令行页面，甚至图形化用的都不多，更何况cockpit控制台（浏览器）**
