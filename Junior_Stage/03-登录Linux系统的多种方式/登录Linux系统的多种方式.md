@@ -102,10 +102,10 @@
 ```bash
 systemctl  enable --now cockpit.socket
 ``` 
-assets\Pasted image 20260913161114.png
+
 
 - 在浏览器中输入：（ip地址）：9090
-![[Pasted image 20260913161114.png]](assets/Pasted%20image%20260913161114.png)
+![[Pasted image 20260913161114.png]](assets/Pasted%20image%2020260913161114.png)
 
 
 > [!caution]
