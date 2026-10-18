@@ -86,8 +86,8 @@
 
 
 - 使用小写`o`同样也可以进入插入模式，此时光标位于当前`shutdown`所在行，按下小写`o`键之后，光标自动跳转到原有所在行的下一行，另起一行。
-![[Pasted image 20261018192954.png|601]](assets/Pasted%20image%2020261018192954.png)
 
+![[Pasted image 20261018192954.png|601]](assets/Pasted%20image%2020261018192954.png)
 ![[Pasted image 20261018192857.png|607]](assets/Pasted%20image%2020261018192857.png)
 
 
