@@ -1,4 +1,4 @@
-[↩️ 返回首页](../README.md)
+[↩️ 返回首页](README.md)
 # Linux Cloud Operations Junior 
 
 > 本阶段主要围绕 **Linux 系统基础、服务器运维、网络管理、基础服务以及 Shell 自动化** 展开学习，逐步建立云计算运维所需要的 Linux 基础能力。
