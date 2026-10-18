@@ -15,10 +15,10 @@
 
 例如：同时用`vi`和 `vim`打开`/etc/resolv.confg`，并对文件进行修改
 - `vim`打开，文件中的语法错误会显示颜色高亮，这也是`vim`的区别于`vi`的地方，做语法检测
-![[Pasted image 20260913201817.png|662]]
+![[Pasted image 20260913201817.png|662]](assets/Pasted%20image%2020260913201817.png)
 
 - `vi`打开，并没有颜色高亮，也没有语法检测
-![[Pasted image 20260913201837.png|661]]
+![[Pasted image 20260913201837.png|661]](assets/Pasted%20image%2020260913201837.png)
 
 - 用`vim`和`vi`打开文件时有两种情况
 	1. 打开一个不存在的文件，即打开一个新文件，左下角会显示`"<file name>" [New File]`
@@ -58,7 +58,7 @@
 > 这里`i`键最为常用 
 
 2. 其他切换模式
-![[Pasted image 20260922080241.png|671]]
+![[Pasted image 20260922080241.png|671]](assets/Pasted%20image%2020260922080241.png)
 
 
 ## 常见基本操作
@@ -82,16 +82,16 @@
 > 下面对其中三项进行介绍
 
 - 常规进入编辑模式的方式就是`i`键，此时在光标所在位置进行插入，光标位置并未发生变化
-![[Pasted image 20261018192732.png|634]]
+![[Pasted image 20261018192732.png|634]](assets/Pasted%20image%2020260922080241.png)
 
 
 - 使用小写`o`同样也可以进入插入模式，此时光标位于当前`shutdown`所在行，按下小写`o`键之后，光标自动跳转到原有所在行的下一行，另起一行。
-![[Pasted image 20261018192954.png|601]]
-![[Pasted image 20261018192857.png|607]]
+![[Pasted image 20261018192954.png|601]](assets/Pasted%20image%2020261018192954.png)
+![[Pasted image 20261018192857.png|607]](assets/Pasted%20image%2020261018192857.png)
 
 
 - 相反，使用大写`o`同样进入插入模式，光标自动跳转到原有所在行的上一行，另起一行。
-![[Pasted image 20261018193352.png|613]]
+![[Pasted image 20261018193352.png|613]](assets/Pasted%20image%2020261018193352.png)
 
 
 ### 命令模式与退出模式
@@ -112,7 +112,7 @@
  
 - `:set nu`：显示行号
 - `:set nonu`：不显示行号
-![[Pasted image 20261018194024.png]]
+![[Pasted image 20261018194024.png]](assets/Pasted%20image%2020261018194024.png)
 
 >[!tip]
 >这里显示行号只是临时显示，退出文件重新进来时，就不显示行号了
@@ -120,13 +120,13 @@
 
 - `:set paste` 设置为粘贴模式，如果不设置的话，粘贴过来的内容格式排版会很乱。进入编辑模式后，在文件左右下方可以看到`-- INSERT (paste) -- `
 - `:set nopaste` 取消设置为粘贴模式
-![[Pasted image 20261018194232.png|609]]
+![[Pasted image 20261018194232.png|609]](assets/Pasted%20image%2020261018194232.png)
 >[!tip]
 >设置为粘贴模式，是为了粘贴某些有缩进格式关系的文件时，防止格式变乱，但是实际使用中，有情况出现即使设置为了粘贴模式，仍然可能出现格式混乱的情况
 
 
 - `:set nohlsearch`： 不显示颜色高亮
-![[Pasted image 20261018194402.png|641]]
+![[Pasted image 20261018194402.png|641]](assets/Pasted%20image%2020261018194402.png)
 >[!important]
 >不建议经常使用，输入后，在当前页面后面再次过滤关键字无法显示语法高亮，要恢复输入`:set hlsearch`，而且退出重新进入后，仍然会显示语法高亮，只是临时起效
 
@@ -137,7 +137,7 @@
 
 
 - `:set cursorcolumn` ：显示列项高亮
-![[Pasted image 20260914193243.png]]
+![[Pasted image 20260914193243.png]](assets/Pasted%20image%2020260914193243.png)
 
 
 - `:set ic` 忽略大小写
@@ -195,12 +195,12 @@
 - 原因：先按**`q`**再按`:`，会出现vim的历史记录
 	- 解决办法：快捷键`shift + :q`，退出历史记录，再`shift + :wq / q`
 
-![[Pasted image 20260913203753.png]]
+![[Pasted image 20260913203753.png]](assets/Pasted%20image%2020260913203753.png)
 
 
 - `vim`打开文件发现无法打开
 
-![[Pasted image 20260913203931.png]]
+![[Pasted image 20260913203931.png]](assets/Pasted%20image%2020260913203931.png)
 
 > [!note]
 > - **第一种情况**：多个人同时打开这个文件，后面打开的就提示这个信息
@@ -214,4 +214,3 @@
 - 解决办法
 	- 按`R`恢复到编辑的状态，再按`Enter`继续进入编辑界面
 	- 但是由于再次打开仍然有这个提示，所以要删除这个临时文件，按`D`键删除`.swap`文件
-
