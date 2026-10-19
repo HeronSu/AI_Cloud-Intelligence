@@ -63,12 +63,12 @@
 ## Linux系统
 
 - 1991年，Linus Torvalds开发出了Linux Kernel内核，并且将其开源。最后该内核和GNU项目结合，形成了Like\-UNIX，也就是Linux操作系统
-> 内核官方网站：[https://www\.kernel\.org/](https://www.kernel.org/)
+> 内核官方网站：[https://www.kernel.org/](https://www.kernel.org/)
 
 - 红帽是目前在Linux开源商业化做的最好的公司，红帽的Linux最早并不是RHEL，是redhat1.0，redhat2.0,...redhat9.0，然后又推出红帽企业版本的Linux，RedHat Enterprise Linux也就是RHEL，后续又陆续推出了RHEL2.0，RHEL3.0，....一直到现在最新版本的RHEL10.0
 - CentOS（Community Enterprise Operation System）是由CentOS开源社区基于RHEL进行开发的，CentOS的源码与RHEL几乎是一样的，同时支持打补丁，而且免费。开源社区那些人是红帽每出一个版本，然后紧接着对应版本的CentOS也被开发出来了，所以说这个时候的CentOS较为稳定。
-> CentOS归档仓库：https://vault\.centos\.org/  专门用来存放所有已停止维护（EOL）的旧版本
-> CentOS官网： https://www\.centos\.org
+> CentOS归档仓库：https://vault.centos.org/  专门用来存放所有已停止维护（EOL）的旧版本
+> CentOS官网： https://www.centos.org
 
 - IBM于2019 年 7 月完成了对RedHat的收购，随之CentOS也被收购。IBM公司宣布停止对CentOS的维护，最后的版本是CentOS\-8\.5。
 - IBM现在先发布CentOS Stream的版本，先发行Stream版本，这个版本并不稳定，等该版本稳定后，才会推出RHEL的正式版。
