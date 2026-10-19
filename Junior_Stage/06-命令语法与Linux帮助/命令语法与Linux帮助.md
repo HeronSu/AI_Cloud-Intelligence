@@ -48,7 +48,7 @@ man (command）
 ```
 
 > [!tip]
-> 这些man帮助手册本质上都是一堆压缩文件，在**`/usr/share/man`**目录下
+> 这些man帮助手册本质上都是一堆压缩文件，在`/usr/share/man`目录下
 
 ![[Pasted image 20260914202916.png]](assets/Pasted%20image%2020260914202916.png)
 
