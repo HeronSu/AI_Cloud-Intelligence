@@ -35,7 +35,7 @@
 
 ## 5. Shell脚本与实战
 
-- [15-shell基础](Junior_Stage/shell基础.md)
+- [15-shell基础](Junior_Stage/15-Shell基础.md)
 - [16-进程管理](Junior_Stage/进程管理.md)
 
 
