@@ -36,12 +36,23 @@
 ## 5. Shell脚本与实战
 
 - [15-Shell基础](Junior_Stage/15-Shell基础.md)
-- [16-进程管理](Junior_Stage/进程管理.md)
+- [16-服务管理](Junior_Stage/16-服务管理.md)
+- [17-日志管理](Junior_Stage/17-日志管理.md)
 
 
 
 ## 6. 网络管理
 - [网络管理]
+
+
+
+
+## 7. Shell脚本与实战
+
+- [15-shell基础](Junior_Stage/15-Shell基础.md)
+> [!tip]
+> 在Shell脚本中，涉及到很多的基本命令，用户管理，权限管理，进程管理，网络管理等等都可以写到这个Shell脚本中，所以要真正进入Shell脚本，要将几乎所有的基本命令和各种管理要弄清楚后，再进行脚本的编写。
+
 
 
 
