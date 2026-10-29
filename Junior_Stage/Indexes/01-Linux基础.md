@@ -1,4 +1,4 @@
-[↩️ 返回索引页](../01-Linux-Cloud-Ops-Junior.md)
+[↩️ 返回索引页](../../01-Linux-Cloud-Ops-Junior.md#-文档分类索引)
 # 🛠️ Linux基础
 
 - [Linux发展及介绍](01-Linux发展及介绍.md)
