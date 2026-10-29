@@ -52,8 +52,8 @@
 > - ✅ **Completed**：已完成
 > - 🚧 **WIP**：Work In Progress（进行中/施工中）
 > - 📝 **TODO**：To Do（待办/未开始）
-> - ⏳ **Pending**：等待中（也可以用这个替代 TODO）
-> - ❌ **Deprecated**：已废弃（如果以后有删除的文档）
+> - ⏳ **Pending**：等待中
+> - ❌ **Deprecated**：已废弃
 
 # 🎯 本阶段学习目标
 
