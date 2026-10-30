@@ -44,7 +44,7 @@
 | 02  | [📁 文件管理与文件系统](Junior_Stage/Indexes/02-文件管理与文件系统.md) |  4  | ✅ Completed |
 | 03  | [⚙️ 用户与权限管理](Junior_Stage/Indexes/03-用户与权限管理.md)     |  3  | ✅ Completed |
 | 04  | [📜 命令组合与文本处理](Junior_Stage/Indexes/04-命令组合与文本处理.md)                |  3  | ✅ Completed |
-| 05  | [📊 进程、服务与日志]()                 | 待定  |   🚧 WIP    |
+| 05  | [📊 进程、服务与日志](Junior_Stage/Indexes/05-进程、服务与日志.md)                 | 待定  |   🚧 WIP    |
 | 06  | [🌐 网络管理]()                     | 待定  |   🚧 WIP     |
 | 07  |                                 |     |             |
 
