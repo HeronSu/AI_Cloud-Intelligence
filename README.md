@@ -20,7 +20,7 @@ Linux 是云计算基础设施的重要组成部分，也是学习虚拟化、�
 
 在掌握 Linux 基础操作后，进一步学习系统管理与云计算运维相关技术，提升实际环境中的部署、管理和故障排查能力。
 
-具体详见：[[02-Linux-Cloud-Ops-Intermediate]](https://chatgpt.com/c/02-Linux-Cloud-Ops-Intermediate.md)
+具体详见：[02-Linux-Cloud-Ops-Intermediate](02-Linux-Cloud-Ops-Intermediate.md)
 
 # ☁️ Linux 云计算运维高级
 
