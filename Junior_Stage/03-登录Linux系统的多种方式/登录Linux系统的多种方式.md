@@ -1,4 +1,5 @@
 [↩️ 返回本阶段首页](../../01-Linux-Cloud-Ops-Junior.md)
+[↩️ 返回Linux基础](../Indexes/01-Linux基础.md)
 # 登录Linux系统的多种方式
 > [!tip]
 > 前三种方式较为常见
