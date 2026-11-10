@@ -1,4 +1,4 @@
-[↩️ 返回本阶段首页](../../01-Linux-Cloud-Ops-Junior.md)
+[🏠 返回本阶段首页](../../01-Linux-Cloud-Ops-Junior.md) / [📁 返回文件管理与文件系统](../Indexes/02-文件管理与文件系统.md)
 # Linux文件系统与路径
 
 # Linux&windows文件系统差异
