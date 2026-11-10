@@ -1,4 +1,4 @@
-[↩️ 返回本阶段首页](../../01-Linux-Cloud-Ops-Junior.md)
+[🏠 返回本阶段首页](../../01-Linux-Cloud-Ops-Junior.md#️-本阶段主要学习内容) / [🛠️ 返回Linux基础](../Indexes/01-Linux基础.md)
 # Linux系统安装
 > [!important]
 > 此处演示CentOS 8.4版本的Linux安装过程 ，其他版本的操作系统安装流程也差不多
