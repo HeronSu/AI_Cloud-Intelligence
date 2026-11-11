@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#D97757"/>
+    </marker>
+  </defs>
+
+  <!-- 整体背景 -->
+  <rect x="1" y="1" width="758" height="418" rx="14" fill="#FBFAF6" stroke="#E5E1D8"/>
+  <text x="24" y="34" font-size="18" font-weight="bold" fill="#2B2B2B">全量同步 (scp) - 无差别全量复制</text>
+
+  <!-- 左侧：源端 -->
+  <g transform="translate(40, 70)">
+    <rect x="0" y="0" width="260" height="280" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#D9D3C7" stroke-width="1.5" />
+    <text x="130" y="30" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">📁 源端 (Source)</text>
+    
+    <!-- 文件列表 -->
+    <g transform="translate(30, 60)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#D97757" stroke-width="1.5"/>
+      <text x="20" y="25" font-size="14" fill="#333">📄 文件 A (已修改)</text>
+    </g>
+    <g transform="translate(30, 110)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#D97757" stroke-width="1.5"/>
+      <text x="20" y="25" font-size="14" fill="#333">📄 文件 B (未变)</text>
+    </g>
+    <g transform="translate(30, 160)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#D97757" stroke-width="1.5"/>
+      <text x="20" y="25" font-size="14" fill="#333">📄 文件 C (已删除)</text>
+    </g>
+    <g transform="translate(30, 210)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#D97757" stroke-width="1.5"/>
+      <text x="20" y="25" font-size="14" fill="#333">📄 文件 D (新增)</text>
+    </g>
+  </g>
+
+  <!-- 中间：传输过程 -->
+  <g>
+    <!-- 传输线 -->
+    <line x1="310" y1="210" x2="440" y2="210" stroke="#D97757" stroke-width="3" stroke-dasharray="8 4" marker-end="url(#arr-orange)"/>
+    <text x="375" y="190" font-size="14" font-weight="bold" fill="#D97757" text-anchor="middle">全量打包传输</text>
+    <text x="375" y="235" font-size="12" fill="#666" text-anchor="middle">(不管是否改变)</text>
+    
+    <!-- 动画：大批量数据包 -->
+    <circle r="6" fill="#D97757" stroke="#FFFFFF" stroke-width="2">
+      <animateMotion dur="2s" repeatCount="indefinite" path="M310,210 L430,210" />
+    </circle>
+    <circle r="6" fill="#D97757" stroke="#FFFFFF" stroke-width="2">
+      <animateMotion dur="2s" repeatCount="indefinite" path="M310,210 L430,210" begin="0.5s" />
+    </circle>
+    <circle r="6" fill="#D97757" stroke="#FFFFFF" stroke-width="2">
+      <animateMotion dur="2s" repeatCount="indefinite" path="M310,210 L430,210" begin="1s" />
+    </circle>
+  </g>
+
+  <!-- 右侧：目标端 -->
+  <g transform="translate(460, 70)">
+    <rect x="0" y="0" width="260" height="280" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#D9D3C7" stroke-width="1.5" />
+    <text x="130" y="30" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">💻 目标端 (Target)</text>
+
+    <g transform="translate(30, 60)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="1.5"/>
+      <text x="20" y="25" font-size="14" fill="#333">📄 文件 A (被覆盖)</text>
+    </g>
+    <g transform="translate(30, 110)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="1.5"/>
+      <text x="20" y="25" font-size="14" fill="#333">📄 文件 B (被覆盖)</text>
+    </g>
+    <g transform="translate(30, 160)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="1.5"/>
+      <text x="20" y="25" font-size="14" fill="#333">📄 文件 D (写入)</text>
+    </g>
+    <g transform="translate(30, 210)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="1.5"/>
+      <text x="20" y="25" font-size="14" fill="#333">📄 文件 E (未受影响)</text>
+    </g>
+  </g>
+
+  <!-- 底部说明 -->
+  <text x="380" y="390" font-size="13" fill="#8A8578" text-anchor="middle" font-style="italic">注：scp 每次都会完整复制所有文件，导致带宽浪费和同步缓慢。</text>
+</svg>

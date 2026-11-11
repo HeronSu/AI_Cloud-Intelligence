@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 640" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#D97757"/></marker>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D6FB6"/></marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A6BB8"/></marker>
+    <marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3A8F5C"/></marker>
+  </defs>
+
+  <rect x="1" y="1" width="758" height="638" rx="14" fill="#FBFAF6" stroke="#E5E1D8"/>
+  <text x="24" y="34" font-size="18" font-weight="bold" fill="#2B2B2B">SSH 免密登录 (公钥认证)：数字签名的完美应用</text>
+
+  <!-- 左侧：客户端 -->
+  <g transform="translate(20, 60)">
+    <rect x="0" y="0" width="320" height="550" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#D9D3C7" stroke-width="1.5" />
+    <text x="160" y="30" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">💻 客户端 (Client)</text>
+
+    <line x1="20" y1="90" x2="300" y2="90" stroke="#E5E1D8" stroke-width="1" stroke-dasharray="4 4" />
+    <text x="160" y="82" font-size="12" fill="#999" text-anchor="middle">前期准备</text>
+
+    <g transform="translate(50, 110)">
+      <rect width="220" height="60" rx="10" fill="#FFFFFF" stroke="#D97757" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">① 生成公私钥对</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">默认存于 ~/.ssh/</text>
+    </g>
+
+    <g transform="translate(50, 190)">
+      <rect width="220" height="60" rx="10" fill="#FFFFFF" stroke="#D97757" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">② 发送用户公钥</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">传输给服务端指定用户</text>
+    </g>
+
+    <line x1="20" y1="280" x2="300" y2="280" stroke="#E5E1D8" stroke-width="1" stroke-dasharray="4 4" />
+    <text x="160" y="272" font-size="12" fill="#999" text-anchor="middle">认证过程</text>
+
+    <g transform="translate(50, 300)">
+      <rect width="220" height="60" rx="10" fill="#FFFFFF" stroke="#8A6BB8" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">③ 发起 SSH 连接</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">保存主机公钥</text>
+    </g>
+
+    <g transform="translate(50, 390)">
+      <rect width="220" height="60" rx="10" fill="#FFFFFF" stroke="#D97757" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">⑤ 私钥数字签名</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">对随机串进行签名</text>
+    </g>
+
+    <g transform="translate(50, 470)">
+      <rect width="220" height="60" rx="10" fill="#F1EEE6" stroke="#3A8F5C" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">✅ 允许免密登录</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">建立安全会话</text>
+    </g>
+  </g>
+
+  <!-- 右侧：服务端 -->
+  <g transform="translate(420, 60)">
+    <rect x="0" y="0" width="320" height="550" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#D9D3C7" stroke-width="1.5" />
+    <text x="160" y="30" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">🖥️ 服务端 (Server)</text>
+
+    <line x1="20" y1="90" x2="300" y2="90" stroke="#E5E1D8" stroke-width="1" stroke-dasharray="4 4" />
+    <text x="160" y="82" font-size="12" fill="#999" text-anchor="middle">前期准备</text>
+
+    <g transform="translate(50, 190)">
+      <rect width="220" height="60" rx="10" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">② 保存公钥</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">存入 ~/.ssh/authorized_keys</text>
+    </g>
+
+    <line x1="20" y1="280" x2="300" y2="280" stroke="#E5E1D8" stroke-width="1" stroke-dasharray="4 4" />
+    <text x="160" y="272" font-size="12" fill="#999" text-anchor="middle">认证过程</text>
+
+    <g transform="translate(50, 300)">
+      <rect width="220" height="60" rx="10" fill="#FFFFFF" stroke="#8A6BB8" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">③ 接受连接</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">下发服务端主机公钥</text>
+    </g>
+
+    <g transform="translate(50, 380)">
+      <rect width="220" height="60" rx="10" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">④ 下发随机串</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">生成明文随机字符串</text>
+    </g>
+
+    <g transform="translate(50, 460)">
+      <rect width="220" height="60" rx="10" fill="#FFFFFF" stroke="#3A8F5C" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">⑥ 验证签名</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">用保存的客户端公钥验签</text>
+    </g>
+  </g>
+
+  <!-- 中间连线 -->
+  <line x1="290" y1="280" x2="510" y2="280" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr-red)"/>
+  <text x="400" y="270" font-size="13" fill="#D97757" text-anchor="middle">② 传输用户公钥</text>
+
+  <line x1="290" y1="390" x2="510" y2="390" stroke="#8A6BB8" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr-purple)"/>
+  <text x="400" y="380" font-size="13" fill="#8A6BB8" text-anchor="middle">③ 发起连接</text>
+  <line x1="510" y1="415" x2="290" y2="415" stroke="#3D6FB6" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr-blue)"/>
+  <text x="400" y="435" font-size="13" fill="#3D6FB6" text-anchor="middle">③ 下发主机公钥</text>
+
+  <line x1="510" y1="470" x2="290" y2="470" stroke="#3D6FB6" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr-blue)"/>
+  <text x="400" y="460" font-size="13" fill="#3D6FB6" text-anchor="middle">④ 明文发送随机串</text>
+
+  <line x1="290" y1="480" x2="510" y2="480" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr-red)"/>
+  <text x="400" y="495" font-size="13" fill="#D97757" text-anchor="middle">⑤ 发送私钥签名</text>
+
+  <line x1="510" y1="550" x2="290" y2="550" stroke="#3A8F5C" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr-green)"/>
+  <text x="400" y="540" font-size="13" fill="#3A8F5C" text-anchor="middle">⑥ 验证成功允许登录</text>
+
+  <!-- 动效小球 -->
+  <circle r="5" fill="#D97757" stroke="#FFFFFF" stroke-width="1.5"><animateMotion dur="1.5s" repeatCount="indefinite" path="M290,280 L510,280" /></circle>
+  <circle r="5" fill="#8A6BB8" stroke="#FFFFFF" stroke-width="1.5"><animateMotion dur="1.5s" repeatCount="indefinite" path="M290,390 L510,390" /></circle>
+  <circle r="5" fill="#3D6FB6" stroke="#FFFFFF" stroke-width="1.5"><animateMotion dur="1.5s" repeatCount="indefinite" path="M510,415 L290,415" /></circle>
+  <circle r="5" fill="#3D6FB6" stroke="#FFFFFF" stroke-width="1.5"><animateMotion dur="1.5s" repeatCount="indefinite" path="M510,470 L290,470" /></circle>
+  <circle r="5" fill="#D97757" stroke="#FFFFFF" stroke-width="1.5"><animateMotion dur="1.5s" repeatCount="indefinite" path="M290,480 L510,480" /></circle>
+  <circle r="5" fill="#3A8F5C" stroke="#FFFFFF" stroke-width="1.5"><animateMotion dur="1.5s" repeatCount="indefinite" path="M510,550 L290,550" /></circle>
+
+  <text x="380" y="625" font-size="13" fill="#8A8578" text-anchor="middle" font-style="italic">注：免密登录的核心在于“私钥签名，公钥验签”，服务端通过随机串验签来确认客户端的真实身份。</text>
+</svg>

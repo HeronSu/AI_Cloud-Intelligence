@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A8578"/></marker>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D6FB6"/></marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A6BB8"/></marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#D97757"/></marker>
+    <marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3A8F5C"/></marker>
+  </defs>
+
+  <rect x="1" y="1" width="758" height="558" rx="14" fill="#FBFAF6" stroke="#E5E1D8"/>
+  <text x="24" y="34" font-size="18" font-weight="bold" fill="#2B2B2B">SSH 密码认证：双向交互与加密通信</text>
+
+  <!-- 左侧：客户端 -->
+  <g transform="translate(20, 60)">
+    <rect x="0" y="0" width="320" height="470" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#D9D3C7" stroke-width="1.5" />
+    <text x="160" y="30" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">💻 客户端 (Client)</text>
+
+    <g transform="translate(50, 60)">
+      <rect width="220" height="60" rx="10" fill="#FFFFFF" stroke="#D97757" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">① 发起连接 &amp; 验公钥</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">接收并保存至 known_hosts</text>
+    </g>
+
+    <g transform="translate(50, 150)">
+      <rect width="220" height="60" rx="10" fill="#FFFFFF" stroke="#8A6BB8" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">② 协商对称密钥</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">基于主机公钥机制完成</text>
+    </g>
+
+    <g transform="translate(50, 240)">
+      <rect width="220" height="60" rx="10" fill="#FFFFFF" stroke="#D97757" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">③ 加密并发送密码</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">用对称会话密钥加密</text>
+    </g>
+
+    <g transform="translate(25, 330)">
+      <rect width="270" height="80" rx="6" fill="#2B2B2B" />
+      <text x="15" y="25" font-size="12" fill="#A0A0A0" font-family="Consolas, monospace">Are you sure you want to continue?</text>
+      <text x="15" y="45" font-size="12" fill="#4CAF50" font-family="Consolas, monospace">yes</text>
+      <text x="45" y="45" font-size="12" fill="#A0A0A0" font-family="Consolas, monospace">(已永久保存公钥)</text>
+      <text x="15" y="68" font-size="12" fill="#FFFFFF" font-family="Consolas, monospace">root@...'s password: <tspan fill="#555">******</tspan></text>
+    </g>
+  </g>
+
+  <!-- 右侧：服务端 -->
+  <g transform="translate(420, 60)">
+    <rect x="0" y="0" width="320" height="470" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#D9D3C7" stroke-width="1.5" />
+    <text x="160" y="30" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">🖥️ 服务端 (Server)</text>
+
+    <g transform="translate(50, 60)">
+      <rect width="220" height="60" rx="10" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">① 接受连接</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">下发主机公钥</text>
+    </g>
+
+    <g transform="translate(50, 150)">
+      <rect width="220" height="60" rx="10" fill="#FFFFFF" stroke="#8A6BB8" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">② 协商对称密钥</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">生成临时的对称会话密钥</text>
+    </g>
+
+    <g transform="translate(50, 240)">
+      <rect width="220" height="60" rx="10" fill="#FFFFFF" stroke="#3A8F5C" stroke-width="2"/>
+      <text x="110" y="26" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">④ 解密并比对密码</text>
+      <text x="110" y="46" font-size="13" fill="#666" text-anchor="middle">解密后比对 /etc/shadow</text>
+    </g>
+
+    <g transform="translate(50, 330)">
+      <rect width="220" height="80" rx="10" fill="#F1EEE6" stroke="#3A8F5C" stroke-width="2"/>
+      <text x="110" y="38" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">✅ 认证成功</text>
+      <text x="110" y="62" font-size="13" fill="#666" text-anchor="middle">建立加密 SSH 会话</text>
+    </g>
+  </g>
+
+  <!-- 中间连线 (Y轴对齐节点中心) -->
+  <line x1="290" y1="150" x2="510" y2="150" stroke="#8A8578" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr-gray)"/>
+  <text x="400" y="140" font-size="13" fill="#8A8578" text-anchor="middle">① 发起连接</text>
+  <line x1="510" y1="175" x2="290" y2="175" stroke="#3D6FB6" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr-blue)"/>
+  <text x="400" y="195" font-size="13" fill="#3D6FB6" text-anchor="middle">① 下发主机公钥</text>
+
+  <line x1="290" y1="240" x2="510" y2="240" stroke="#8A6BB8" stroke-width="2" stroke-dasharray="5 4" marker-start="url(#arr-purple)" marker-end="url(#arr-purple)"/>
+  <text x="400" y="230" font-size="13" fill="#8A6BB8" text-anchor="middle">② 双向协商对称会话密钥</text>
+
+  <line x1="290" y1="330" x2="510" y2="330" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr-red)"/>
+  <text x="400" y="320" font-size="13" fill="#D97757" text-anchor="middle">③ 发送加密后的密码</text>
+
+  <line x1="510" y1="390" x2="290" y2="390" stroke="#3A8F5C" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr-green)"/>
+  <text x="400" y="380" font-size="13" fill="#3A8F5C" text-anchor="middle">✅ 认证成功 (建立会话)</text>
+
+  <!-- 动态小球 -->
+  <circle r="5" fill="#8A8578" stroke="#FFFFFF" stroke-width="1.5"><animateMotion dur="1.5s" repeatCount="indefinite" path="M290,150 L510,150" /></circle>
+  <circle r="5" fill="#3D6FB6" stroke="#FFFFFF" stroke-width="1.5"><animateMotion dur="1.5s" repeatCount="indefinite" path="M510,175 L290,175" /></circle>
+  <circle r="5" fill="#8A6BB8" stroke="#FFFFFF" stroke-width="1.5"><animateMotion dur="2s" repeatCount="indefinite" path="M290,240 L510,240" /></circle>
+  <circle r="5" fill="#8A6BB8" stroke="#FFFFFF" stroke-width="1.5"><animateMotion dur="2s" repeatCount="indefinite" path="M510,240 L290,240" /></circle>
+  <circle r="5" fill="#D97757" stroke="#FFFFFF" stroke-width="1.5"><animateMotion dur="1.5s" repeatCount="indefinite" path="M290,330 L510,330" /></circle>
+  <circle r="5" fill="#3A8F5C" stroke="#FFFFFF" stroke-width="1.5"><animateMotion dur="1.5s" repeatCount="indefinite" path="M510,390 L290,390" /></circle>
+
+  <text x="380" y="545" font-size="13" fill="#8A8578" text-anchor="middle" font-style="italic">注：密码由对称会话密钥加密，并非由主机公钥直接加密。</text>
+</svg>

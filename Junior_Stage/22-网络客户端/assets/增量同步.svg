@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3A8F5C"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="758" height="418" rx="14" fill="#FBFAF6" stroke="#E5E1D8"/>
+  <text x="24" y="34" font-size="18" font-weight="bold" fill="#2B2B2B">增量同步 (rsync) - 差异对比，精准传输</text>
+
+  <g transform="translate(40, 70)">
+    <rect x="0" y="0" width="260" height="280" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#D9D3C7" stroke-width="1.5" />
+    <text x="130" y="30" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">📁 源端 (Source)</text>
+    
+    <g transform="translate(30, 60)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#D97757" stroke-width="1.5"/>
+      <text x="20" y="25" font-size="14" fill="#333">📄 文件 A (已修改)</text>
+    </g>
+    <g transform="translate(30, 110)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="20" y="25" font-size="14" fill="#666">📄 文件 B (未变)</text>
+    </g>
+    <g transform="translate(30, 160)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="20" y="25" font-size="14" fill="#666">📄 文件 C (未变)</text>
+    </g>
+    <g transform="translate(30, 210)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#D97757" stroke-width="1.5"/>
+      <text x="20" y="25" font-size="14" fill="#333">📄 文件 D (新增)</text>
+    </g>
+  </g>
+
+  <g>
+    <line x1="310" y1="150" x2="440" y2="150" stroke="#3A8F5C" stroke-width="3" stroke-dasharray="8,4" marker-end="url(#arr-green)"/>
+    <text x="375" y="135" font-size="13" font-weight="bold" fill="#3A8F5C" text-anchor="middle">只传修改部分</text>
+    
+    <line x1="310" y1="200" x2="440" y2="200" stroke="#9CA3AF" stroke-width="2" stroke-dasharray="3,5"/>
+    <line x1="310" y1="250" x2="440" y2="250" stroke="#9CA3AF" stroke-width="2" stroke-dasharray="3,5"/>
+    
+    <rect x="325" y="215" width="100" height="20" rx="10" fill="#FBFAF6" stroke="#D9D3C7" stroke-width="1"/>
+    <text x="375" y="229" font-size="12" fill="#8A8578" text-anchor="middle">跳过未修改文件</text>
+
+    <line x1="310" y1="300" x2="440" y2="300" stroke="#3A8F5C" stroke-width="3" stroke-dasharray="8,4" marker-end="url(#arr-green)"/>
+    <text x="375" y="285" font-size="13" font-weight="bold" fill="#3A8F5C" text-anchor="middle">只传新增文件</text>
+
+    <circle r="5" fill="#3A8F5C" stroke="#FFFFFF" stroke-width="1.5">
+      <animateMotion dur="1.5s" repeatCount="indefinite" path="M310,150 L430,150" />
+    </circle>
+    <circle r="5" fill="#3A8F5C" stroke="#FFFFFF" stroke-width="1.5">
+      <animateMotion dur="1.5s" repeatCount="indefinite" path="M310,300 L430,300" />
+    </circle>
+  </g>
+
+  <g transform="translate(460, 70)">
+    <rect x="0" y="0" width="260" height="280" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#D9D3C7" stroke-width="1.5" />
+    <text x="130" y="30" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">💻 目标端 (Target)</text>
+
+    <g transform="translate(30, 60)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#3A8F5C" stroke-width="1.5"/>
+      <text x="20" y="25" font-size="14" fill="#333">📄 文件 A (部分更新)</text>
+    </g>
+    <g transform="translate(30, 110)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.5"/>
+      <text x="20" y="25" font-size="14" fill="#333">📄 文件 B (保持原样)</text>
+    </g>
+    <g transform="translate(30, 160)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1.5"/>
+      <text x="20" y="25" font-size="14" fill="#333">📄 文件 C (保持原样)</text>
+    </g>
+    <g transform="translate(30, 210)">
+      <rect width="200" height="40" rx="6" fill="#FFFFFF" stroke="#3A8F5C" stroke-width="1.5"/>
+      <text x="20" y="25" font-size="14" fill="#333">📄 文件 D (接收新增)</text>
+    </g>
+  </g>
+
+  <text x="380" y="390" font-size="13" fill="#8A8578" text-anchor="middle" font-style="italic">注：rsync 通过哈希算法比对差异，仅传输新增或改变的部分，极大节省带宽和时间。</text>
+</svg>
