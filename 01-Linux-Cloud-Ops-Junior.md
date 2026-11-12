@@ -53,7 +53,7 @@
 | 03  | [⚙️ 用户与权限管理](Junior_Stage/Indexes/03-用户与权限管理.md)     |  3  | ✅ Completed |
 | 04  | [📜 命令组合与文本处理](Junior_Stage/Indexes/04-命令组合与文本处理.md)                |  3  | ✅ Completed |
 | 05  | [📊 系统运行管理](Junior_Stage/Indexes/05-系统运行管理.md)                 | 2/4  |   🚧 WIP    |
-| 06  | [🌐 网络管理](Junior_Stage/Indexes/06-网络管理.md)                     | 4/5  |   🚧 WIP     |
+| 06  | [🌐 网络管理](Junior_Stage/Indexes/06-网络管理.md)                     | 5/5  |   ✅ Completed     |
 | 07  |                                 |     |             |
 
 > [!tip]
