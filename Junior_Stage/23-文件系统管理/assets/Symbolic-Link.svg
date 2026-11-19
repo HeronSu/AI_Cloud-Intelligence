@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3D6FB6"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#C8463D"/>
+    </marker>
+  </defs>
+
+  <!-- 背景板 -->
+  <rect x="1" y="1" width="758" height="378" rx="14" fill="#FBFAF6" stroke="#E5E1D8"/>
+  
+  <!-- 标题与副标题 -->
+  <text x="24" y="34" font-size="17" font-weight="bold" fill="#2B2B2B">软链接机制与死链接原理</text>
+  <text x="24" y="56" font-size="13" fill="#666">软链接本质是保存源文件路径的独立文件，访问时自动重定向</text>
+
+  <!-- ==================== 核心节点 ==================== -->
+
+  <!-- 左侧：软链接 -->
+  <g>
+    <!-- 同步修改高亮（呼吸动效） -->
+    <rect x="110" y="130" width="160" height="80" rx="10" fill="#3D6FB6" opacity="0">
+      <animate attributeName="opacity" values="0;0.15;0;0.15;0" dur="4s" repeatCount="indefinite" />
+    </rect>
+    
+    <rect x="110" y="130" width="160" height="80" rx="10" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+    <text x="190" y="160" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">软链接</text>
+    <text x="190" y="180" font-size="13" fill="#666" text-anchor="middle">独立文件</text>
+    <text x="190" y="195" font-size="12" fill="#888" text-anchor="middle">（内容为路径字符串）</text>
+  </g>
+
+  <!-- 右侧：源文件 -->
+  <g>
+    <!-- 同步修改高亮（呼吸动效） -->
+    <rect x="490" y="130" width="160" height="80" rx="10" fill="#D97757" opacity="0">
+      <animate attributeName="opacity" values="0;0.15;0;0.15;0" dur="4s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- 正常状态的源文件 -->
+    <rect x="490" y="130" width="160" height="80" rx="10" fill="#FFFFFF" stroke="#D97757" stroke-width="2">
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    </rect>
+    <text x="570" y="160" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">
+      源文件
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    </text>
+    <text x="570" y="180" font-size="13" fill="#666" text-anchor="middle">
+      真实数据所在
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    </text>
+
+    <!-- 被删除的源文件（虚线边框） -->
+    <rect x="490" y="130" width="160" height="80" rx="10" fill="#F4EFE6" stroke="#C8463D" stroke-width="2" stroke-dasharray="5 3" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    </rect>
+    <text x="570" y="160" font-size="16" font-weight="bold" fill="#9A9284" text-anchor="middle" opacity="0">
+      源文件（已删除）
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    </text>
+
+    <!-- 红色大叉 -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+      <path d="M 530 150 L 610 190 M 610 150 L 530 190" stroke="#C8463D" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- ==================== 连线与动效 ==================== -->
+
+  <!-- 正常状态连线（实线 + 箭头） -->
+  <path d="M 270 170 L 480 170" stroke="#3D6FB6" stroke-width="2" marker-end="url(#arr-blue)" fill="none">
+    <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+  </path>
+  
+  <!-- 正常状态数据流动小球 -->
+  <circle r="5" fill="#3D6FB6">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M 270 170 L 470 170"/>
+    <animate attributeName="opacity" values="1;1;0" keyTimes="0;0.45;0.5" dur="8s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 中间文字：重定向 -->
+  <text x="380" y="160" font-size="13" font-weight="bold" fill="#3D6FB6" text-anchor="middle">
+    系统自动重定向
+    <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+  </text>
+
+  <!-- 失效状态连线（红色虚线 + 无箭头/断头） -->
+  <path d="M 270 170 L 480 170" stroke="#C8463D" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr-red)" fill="none" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+  </path>
+  
+  <!-- 中间文字：死链接 -->
+  <text x="380" y="160" font-size="13" font-weight="bold" fill="#C8463D" text-anchor="middle" opacity="0">
+    路径找不到目标（死链接）
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+  </text>
+
+  <!-- ==================== 底部状态提示栏 ==================== -->
+  
+  <!-- 正常状态提示 -->
+  <g opacity="1">
+    <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    <rect x="130" y="270" width="500" height="32" rx="6" fill="#3A8F5C" fill-opacity="0.1"/>
+    <text x="380" y="291" font-size="14" font-weight="bold" fill="#3A8F5C" text-anchor="middle">状态 1：正常同步。无论修改哪一方，最终都会重定向修改源文件数据。</text>
+  </g>
+
+  <!-- 失效状态提示 -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    <rect x="130" y="270" width="500" height="32" rx="6" fill="#C8463D" fill-opacity="0.1"/>
+    <text x="380" y="291" font-size="14" font-weight="bold" fill="#C8463D" text-anchor="middle">状态 2：失效死链接。源文件被删除，软链接保存的路径失效。</text>
+  </g>
+
+  <!-- 底部规范注释 -->
+  <text x="380" y="350" font-size="12" fill="#9A9284" text-anchor="middle">遵循底层的路径寻址原理：软链接只负责指路，不负责存数据。</text>
+</svg>

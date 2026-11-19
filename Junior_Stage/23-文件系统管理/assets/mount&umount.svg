@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3A8F5C" />
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#C8463D" />
+    </marker>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3D6FB6" />
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="758" height="478" rx="14" fill="#FBFAF6" stroke="#E5E1D8" stroke-width="2" />
+
+  <text x="24" y="34" font-size="17" font-weight="bold" fill="#2B2B2B">挂载点与设备访问机制（挂载 vs 卸载）</text>
+  <text x="24" y="56" font-size="13" fill="#666">挂载点仅是目录树中的访问入口，卸载后入口断开但底层设备数据完整保留</text>
+
+  <rect x="28" y="80" width="276" height="330" rx="12" fill="#F1EEE6" stroke="#D9D3C7" stroke-width="1.5" />
+  <rect x="44" y="94" width="244" height="28" rx="6" fill="#3A8F5C" />
+  <text x="166" y="113" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">状态一：已挂载（入口打通）</text>
+
+  <rect x="56" y="138" width="220" height="62" rx="10" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2" />
+  <text x="166" y="164" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">挂载点目录 (/mnt/data)</text>
+  <text x="166" y="185" font-size="12" fill="#555" text-anchor="middle">目录树中的访问入口</text>
+
+  <path id="path-mounted" d="M 166,204 L 166,274" stroke="#3A8F5C" stroke-width="2.5" marker-end="url(#arr-green)" />
+  <text x="178" y="244" font-size="12" font-weight="bold" fill="#3A8F5C">已绑定映射</text>
+
+  <circle r="4.5" fill="#3A8F5C">
+    <animateMotion dur="2.2s" repeatCount="indefinite" path="M 166,204 L 166,274" />
+  </circle>
+
+  <rect x="56" y="280" width="220" height="110" rx="10" fill="#FFFFFF" stroke="#D97757" stroke-width="2" />
+  <text x="166" y="305" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">底层设备 (/dev/sdb1)</text>
+  <text x="166" y="325" font-size="12" fill="#666" text-anchor="middle">文件系统（ext4 / xfs）</text>
+  <rect x="76" y="338" width="180" height="38" rx="6" fill="#F4EFE6" stroke="#D9D3C7" stroke-width="1" />
+  <text x="166" y="362" font-size="12" font-weight="bold" fill="#3A8F5C" text-anchor="middle">✓ 可读写：app.conf, data.db</text>
+
+  <path d="M 314,245 L 444,245" stroke="#3D6FB6" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arr-blue)" />
+  <rect x="330" y="212" width="98" height="24" rx="5" fill="#3D6FB6" />
+  <text x="379" y="228" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">umount 卸载</text>
+  <text x="379" y="268" font-size="12" fill="#555" text-anchor="middle">解除路径绑定</text>
+  <text x="379" y="286" font-size="11" fill="#888" text-anchor="middle">（不擦除磁盘数据）</text>
+
+  <rect x="456" y="80" width="276" height="330" rx="12" fill="#F1EEE6" stroke="#D9D3C7" stroke-width="1.5" />
+  <rect x="472" y="94" width="244" height="28" rx="6" fill="#C8463D" />
+  <text x="594" y="113" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">状态二：已卸载（入口断开）</text>
+
+  <rect x="484" y="138" width="220" height="62" rx="10" fill="#FFFFFF" stroke="#B9B2A3" stroke-width="2" />
+  <text x="594" y="164" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">原挂载点 (/mnt/data)</text>
+  <text x="594" y="185" font-size="12" fill="#C8463D" text-anchor="middle">还原为空目录（无法访问设备）</text>
+
+  <path d="M 594,204 L 594,272" stroke="#C8463D" stroke-width="2" stroke-dasharray="5 4" />
+  <line x1="585" y1="230" x2="603" y2="248" stroke="#C8463D" stroke-width="2.5" />
+  <line x1="603" y1="230" x2="585" y2="248" stroke="#C8463D" stroke-width="2.5" />
+  <text x="612" y="244" font-size="12" font-weight="bold" fill="#C8463D">通道已断开</text>
+
+  <rect x="484" y="280" width="220" height="110" rx="10" fill="#FFFFFF" stroke="#8A6BB8" stroke-width="2" />
+  <rect x="484" y="280" width="220" height="110" rx="10" fill="#8A6BB8" opacity="0">
+    <animate attributeName="opacity" values="0;0.14;0" dur="3.5s" repeatCount="indefinite" />
+  </rect>
+  <text x="594" y="305" font-size="15" font-weight="bold" fill="#2B2B2B" text-anchor="middle">底层设备 (/dev/sdb1)</text>
+  <text x="594" y="325" font-size="12" fill="#666" text-anchor="middle">文件系统独立留存</text>
+  <rect x="504" y="338" width="180" height="38" rx="6" fill="#F4EFE6" stroke="#8A6BB8" stroke-width="1" />
+  <text x="594" y="362" font-size="12" font-weight="bold" fill="#8A6BB8" text-anchor="middle">文件仍在：app.conf, data.db</text>
+
+  <rect x="28" y="424" width="704" height="38" rx="8" fill="#F4EFE6" stroke="#D9D3C7" stroke-width="1" />
+  <text x="380" y="448" font-size="13" fill="#2B2B2B" text-anchor="middle">核心结论：卸载（umount）只是移除目录树中的访问入口，重新挂载后即可再次访问原有文件。</text>
+</svg>

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3D6FB6"/>
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8A6BB8"/>
+    </marker>
+    <marker id="arr-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9A9284"/>
+    </marker>
+  </defs>
+
+  <!-- 背景板 -->
+  <rect x="1" y="1" width="758" height="458" rx="14" fill="#FBFAF6" stroke="#E5E1D8"/>
+  
+  <!-- 标题 -->
+  <text x="24" y="34" font-size="17" font-weight="bold" fill="#2B2B2B">硬链接（Hard Link）寻址与删除机制</text>
+  <text x="24" y="56" font-size="13" fill="#666">两个文件（名）共享同一个 Inode 编号，删除源文件不影响链接文件</text>
+
+  <!-- ==================== 核心节点 ==================== -->
+
+  <!-- 左侧：硬链接文件A -->
+  <g>
+    <rect x="80" y="100" width="180" height="80" rx="10" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+    <text x="170" y="130" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">链接文件 A</text>
+    <text x="170" y="150" font-size="13" fill="#666" text-anchor="middle">硬链接 (Hard Link)</text>
+    <text x="170" y="165" font-size="12" fill="#888" text-anchor="middle">并未复制真实数据</text>
+  </g>
+
+  <!-- 右侧：源文件B -->
+  <g>
+    <!-- 正常状态的源文件 -->
+    <rect x="500" y="100" width="180" height="80" rx="10" fill="#FFFFFF" stroke="#D97757" stroke-width="2">
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    </rect>
+    <text x="590" y="130" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">
+      源文件 B
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    </text>
+    <text x="590" y="150" font-size="13" fill="#666" text-anchor="middle">
+      提供数据的文件名
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    </text>
+
+    <!-- 被删除的源文件（虚线边框） -->
+    <rect x="500" y="100" width="180" height="80" rx="10" fill="#F4EFE6" stroke="#C8463D" stroke-width="2" stroke-dasharray="5 3" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    </rect>
+    <text x="590" y="130" font-size="16" font-weight="bold" fill="#9A9284" text-anchor="middle" opacity="0">
+      源文件 B (已删除)
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    </text>
+    
+    <!-- 红色大叉 -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+      <path d="M 550 115 L 630 165 M 630 115 L 550 165" stroke="#C8463D" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- 中间：共享的 Inode -->
+  <g>
+    <rect x="270" y="250" width="220" height="110" rx="10" fill="#FFFFFF" stroke="#8A6BB8" stroke-width="2"/>
+    <text x="380" y="275" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">共享 Inode 编号</text>
+    <text x="380" y="295" font-size="13" fill="#8A6BB8" text-anchor="middle">Inode: #1024</text>
+    
+    <!-- 引用计数变化 -->
+    <text x="380" y="320" font-size="13" font-weight="bold" fill="#3A8F5C" text-anchor="middle">
+      Link Count = 2
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    </text>
+    <text x="380" y="320" font-size="13" font-weight="bold" fill="#C8463D" text-anchor="middle">
+      Link Count = 1
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    </text>
+    
+    <text x="380" y="340" font-size="12" fill="#888" text-anchor="middle">底层数据块 (Data) 依然存在</text>
+  </g>
+
+  <!-- ==================== 连线与动效 ==================== -->
+
+  <!-- 1. 文件A 指向 Inode（始终正常） -->
+  <path d="M 170 180 L 300 245" stroke="#3D6FB6" stroke-width="2" marker-end="url(#arr-blue)" fill="none"/>
+  <text x="210" y="220" font-size="12" fill="#3D6FB6" text-anchor="middle">指向相同 Inode</text>
+
+  <!-- A 的数据流动小球（贯穿始终） -->
+  <circle r="5" fill="#3D6FB6">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M 170 180 L 300 245"/>
+  </circle>
+
+  <!-- 2. 文件B 指向 Inode（先存在，后被删除） -->
+  <g opacity="1">
+    <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    <path d="M 590 180 L 460 245" stroke="#D97757" stroke-width="2" marker-end="url(#arr-purple)" fill="none"/>
+    <text x="550" y="220" font-size="12" fill="#D97757" text-anchor="middle">指向相同 Inode</text>
+    
+    <!-- B 的数据流动小球（被删除后消失） -->
+    <circle r="5" fill="#D97757">
+      <animateMotion dur="2s" repeatCount="indefinite" path="M 590 180 L 460 245"/>
+    </circle>
+  </g>
+
+  <!-- ==================== 底部状态说明 ==================== -->
+
+  <!-- 正常状态 -->
+  <g opacity="1">
+    <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite"/>
+    <rect x="130" y="390" width="500" height="32" rx="6" fill="#3A8F5C" fill-opacity="0.1"/>
+    <text x="380" y="411" font-size="14" font-weight="bold" fill="#3A8F5C" text-anchor="middle">状态 1：正常状态。文件 A 和 B 共享 Inode，均可访问数据。</text>
+  </g>
+
+  <!-- 失效状态（对于硬链接而言，只是少了个入口） -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite"/>
+    <rect x="130" y="390" width="500" height="32" rx="6" fill="#3D6FB6" fill-opacity="0.1"/>
+    <text x="380" y="411" font-size="14" font-weight="bold" fill="#3D6FB6" text-anchor="middle">状态 2：源文件B被删，但文件A依然能通过 Inode 访问数据。</text>
+  </g>
+</svg>
