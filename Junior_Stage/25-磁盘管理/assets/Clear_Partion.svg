@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <!-- 背景板 -->
+  <rect x="1" y="1" width="758" height="358" rx="14" fill="#FBFAF6" stroke="#E5E1D8"/>
+  
+  <!-- 标题 -->
+  <text x="24" y="34" font-size="17" font-weight="bold" fill="#2B2B2B">MBR (512 字节) 内部结构</text>
+  <text x="24" y="56" font-size="13" fill="#666">前 446 字节为引导代码，后 64 字节才是分区表</text>
+
+  <!-- 外框 -->
+  <rect x="40" y="90" width="680" height="70" rx="6" fill="#F4EFE6" stroke="#B9B2A3" stroke-width="2"/>
+  
+  <!-- 1. 引导代码 446 字节 (占 680 * 446/512 ≈ 592 宽度) -->
+  <rect x="40" y="90" width="592" height="70" rx="6" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+  <text x="336" y="125" font-size="16" font-weight="bold" fill="#2B2B2B" text-anchor="middle">引导代码 (Bootloader)</text>
+  <text x="336" y="145" font-size="13" fill="#666" text-anchor="middle">前 446 字节</text>
+
+  <!-- 2. 分区表 64 字节 (占 680 * 64/512 ≈ 85 宽度) -->
+  <rect x="632" y="90" width="85" height="70" rx="4" fill="#FFFFFF" stroke="#D97757" stroke-width="2"/>
+  <text x="674" y="115" font-size="13" font-weight="bold" fill="#2B2B2B" text-anchor="middle">分区表</text>
+  <text x="674" y="135" font-size="12" fill="#666" text-anchor="middle">(64字节)</text>
+  <text x="674" y="150" font-size="11" fill="#D97757" text-anchor="middle">记录大小与个数</text>
+
+  <!-- 底部标注 -->
+  <text x="336" y="180" font-size="12" fill="#9A9284" text-anchor="middle">引导系统启动</text>
+  <text x="674" y="180" font-size="12" fill="#9A9284" text-anchor="middle">系统识别的关键</text>
+
+  <!-- 场景演示提示区 -->
+  <rect x="100" y="220" width="560" height="100" rx="8" fill="#F4EFE6" stroke="#D9D3C7" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- 场景 1 动画：只清除前446字节 -->
+  <g opacity="1">
+    <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    
+    <!-- 擦除动画遮罩 -->
+    <rect x="40" y="90" width="592" height="70" rx="6" fill="#C8463D" opacity="0.3">
+      <animate attributeName="width" values="0;592;592;0" keyTimes="0;0.3;0.8;1" dur="4s" repeatCount="indefinite" />
+    </rect>
+    
+    <text x="380" y="250" font-size="15" font-weight="bold" fill="#3D6FB6" text-anchor="middle">操作 1：dd 清空前 446 字节</text>
+    <text x="380" y="275" font-size="14" fill="#2B2B2B" text-anchor="middle">结果：引导被破坏（无法开机），但 <tspan fill="#3A8F5C" font-weight="bold">分区依然存在，数据完好</tspan>！</text>
+    <text x="380" y="300" font-size="12" fill="#9A9284" text-anchor="middle">(分区表保存在后面 64 字节中，未受影响)</text>
+  </g>
+
+  <!-- 场景 2 动画：清除后64字节 -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.5;0.95;1" dur="8s" repeatCount="indefinite" />
+    
+    <!-- 擦除动画遮罩 -->
+    <rect x="632" y="90" width="88" height="70" rx="4" fill="#C8463D" opacity="0.3">
+      <animate attributeName="width" values="0;88;88;0" keyTimes="0;0.3;0.8;1" dur="4s" repeatCount="indefinite" />
+    </rect>
+    
+    <text x="380" y="250" font-size="15" font-weight="bold" fill="#D97757" text-anchor="middle">操作 2：清空分区表 (64 字节)</text>
+    <text x="380" y="275" font-size="14" fill="#2B2B2B" text-anchor="middle">结果：<tspan fill="#C8463D" font-weight="bold">分区消失！</tspan> 系统无法识别分区，数据变成“孤儿”。</text>
+    <text x="380" y="300" font-size="12" fill="#9A9284" text-anchor="middle">(直接清空前 512 字节 MBR 即可达到此效果)</text>
+  </g>
+</svg>
