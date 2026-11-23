@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 270" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <rect x="10" y="10" width="740" height="250" rx="12" fill="#FBFAF6" stroke="#E5E1D8"/>
+  <text x="30" y="42" font-size="18" font-weight="bold" fill="#2B2B2B">Ext4 文件系统数据存储机制</text>
+  <text x="30" y="68" font-size="14" font-weight="bold" fill="#3D6FB6">1. 块组划分 (Block Groups)</text>
+
+  <rect x="30" y="85" width="700" height="40" rx="6" fill="#F1EEE6" stroke="#B9B2A3" stroke-width="1.5"/>
+  <text x="380" y="78" font-size="13" font-weight="bold" fill="#555" text-anchor="middle">物理磁盘分区</text>
+
+  <rect x="40" y="93" width="150" height="24" rx="4" fill="#FFFFFF" stroke="#B9B2A3" stroke-width="1"/>
+  <text x="115" y="110" font-size="12" fill="#555" text-anchor="middle">Group 0</text>
+
+  <rect x="200" y="93" width="150" height="24" rx="4" fill="#FFFFFF" stroke="#B9B2A3" stroke-width="1"/>
+  <text x="275" y="110" font-size="12" fill="#555" text-anchor="middle">Group 1</text>
+
+  <rect x="360" y="93" width="150" height="24" rx="4" fill="#FFFFFF" stroke="#B9B2A3" stroke-width="1"/>
+  <text x="435" y="110" font-size="12" fill="#555" text-anchor="middle">Group 2</text>
+
+  <rect x="520" y="93" width="200" height="24" rx="4" fill="#FFFFFF" stroke="#B9B2A3" stroke-width="1"/>
+  <text x="620" y="110" font-size="12" fill="#555" text-anchor="middle">Group ...</text>
+
+  <path d="M 115 117 L 115 140 L 50 140" stroke="#8A8578" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
+
+  <rect x="30" y="145" width="380" height="90" rx="6" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+  <text x="220" y="165" font-size="13" font-weight="bold" fill="#3D6FB6" text-anchor="middle">Group 0 内部结构</text>
+
+  <rect x="45" y="180" width="80" height="40" rx="4" fill="#D97757" fill-opacity="0.2" stroke="#D97757" stroke-width="1.5"/>
+  <text x="85" y="204" font-size="12" fill="#2B2B2B" text-anchor="middle">Super Block</text>
+
+  <rect x="135" y="180" width="80" height="40" rx="4" fill="#3D6FB6" fill-opacity="0.2" stroke="#3D6FB6" stroke-width="1.5"/>
+  <text x="175" y="204" font-size="12" fill="#2B2B2B" text-anchor="middle">Inode 表</text>
+
+  <rect x="225" y="180" width="170" height="40" rx="4" fill="#3A8F5C" fill-opacity="0.2" stroke="#3A8F5C" stroke-width="1.5"/>
+  <text x="310" y="204" font-size="12" fill="#2B2B2B" text-anchor="middle">Data Blocks</text>
+
+  <text x="430" y="175" font-size="13" fill="#555">
+    <tspan x="430" dy="0">数据存入时，系统尽量让它的</tspan>
+    <tspan x="430" dy="20">元数据和真实数据同处一个</tspan>
+    <tspan x="430" dy="20">块组中，以减少寻道时间。</tspan>
+  </text>
+
+  <g>
+    <rect x="160" y="120" width="30" height="20" rx="3" fill="#8A6BB8" opacity="0.8">
+      <animate attributeName="y" values="60;175;175;60" keyTimes="0;0.4;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <circle r="4" fill="#3D6FB6">
+      <animate attributeName="cx" values="175;175;175;175;175" keyTimes="0;0.3;0.45;0.6;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="140;175;200;200;200" keyTimes="0;0.3;0.45;0.6;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.35;0.45;0.6;0.8" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="4" fill="#3A8F5C">
+      <animate attributeName="cx" values="175;175;310;310;310" keyTimes="0;0.3;0.5;0.7;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="140;175;200;200;200" keyTimes="0;0.3;0.5;0.7;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.35;0.5;0.7;0.9" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
