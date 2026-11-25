@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 402" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <rect x="1" y="1" width="838" height="400" rx="14" fill="#FBFAF6" stroke="#E5E1D8"/>
+  <text x="24" y="30" font-size="18" font-weight="bold" fill="#2B2B2B">COW = Copy On Write 写时复制</text>
+  <g font-size="13" font-weight="bold">
+    <text x="24" y="54" fill="#555" text-anchor="start">
+      <tspan>状态：初始 —— 快照刚拍下，索引指向源卷底层数据</tspan>
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.25;0.25;0.9;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="24" y="54" fill="#D97757" text-anchor="start" opacity="0">
+      <tspan>状态：覆盖前 —— 先把旧 a1 / a2 拷贝进快照旧数据区</tspan>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.25;0.25;0.55;0.55;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="24" y="54" fill="#3A8F5C" text-anchor="start" opacity="0">
+      <tspan>状态：覆盖后 —— a6 / a7 写入源卷，快照索引改指向旧数据区</tspan>
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.55;0.55;0.9;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+  </g>
+  <defs>
+    <marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3D6FB6"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#C8463D"/>
+    </marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#D97757"/>
+    </marker>
+  </defs>
+
+  <rect x="40" y="68" width="340" height="322" rx="10" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+  <text x="56" y="90" font-size="13" font-weight="bold" fill="#3D6FB6">源卷（可读写）</text>
+  <text x="56" y="108" font-size="11" fill="#9A9284">inode 索引（覆盖后指向位置不变）</text>
+  <g>
+    <rect x="56" y="116" width="66" height="38" rx="4" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+    <rect x="132" y="116" width="66" height="38" rx="4" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+    <rect x="208" y="116" width="66" height="38" rx="4" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+    <rect x="284" y="116" width="66" height="38" rx="4" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+    <text x="89" y="140" font-size="11" font-weight="bold" fill="#2B2B2B" text-anchor="middle">
+      <tspan>a1</tspan>
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.55;0.55;0.9;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="89" y="140" font-size="11" font-weight="bold" fill="#B4552F" text-anchor="middle" opacity="0">
+      <tspan>a1 / a6</tspan>
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.55;0.55;0.9;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="165" y="140" font-size="11" font-weight="bold" fill="#2B2B2B" text-anchor="middle">
+      <tspan>a2</tspan>
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.55;0.55;0.9;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="165" y="140" font-size="11" font-weight="bold" fill="#B4552F" text-anchor="middle" opacity="0">
+      <tspan>a2 / a7</tspan>
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.55;0.55;0.9;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="241" y="140" font-size="11" font-weight="bold" fill="#555" text-anchor="middle">a3</text>
+    <text x="317" y="140" font-size="11" font-weight="bold" fill="#555" text-anchor="middle">a4</text>
+  </g>
+  <text x="56" y="262" font-size="11" fill="#9A9284">底层数据 block（内容被覆盖）</text>
+  <g>
+    <rect x="56" y="272" width="66" height="46" rx="4" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+    <rect x="132" y="272" width="66" height="46" rx="4" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+    <rect x="208" y="272" width="66" height="46" rx="4" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+    <rect x="284" y="272" width="66" height="46" rx="4" fill="#FFFFFF" stroke="#3D6FB6" stroke-width="2"/>
+    <text x="89" y="300" font-size="11" font-weight="bold" fill="#555" text-anchor="middle">
+      <tspan>a1-data</tspan>
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.55;0.55;0.9;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="89" y="300" font-size="11" font-weight="bold" fill="#B4552F" text-anchor="middle" opacity="0">
+      <tspan>a6-data</tspan>
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.55;0.55;0.9;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="165" y="300" font-size="11" font-weight="bold" fill="#555" text-anchor="middle">
+      <tspan>a2-data</tspan>
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.55;0.55;0.9;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="165" y="300" font-size="11" font-weight="bold" fill="#B4552F" text-anchor="middle" opacity="0">
+      <tspan>a7-data</tspan>
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.55;0.55;0.9;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="241" y="300" font-size="11" font-weight="bold" fill="#555" text-anchor="middle">a3-data</text>
+    <text x="317" y="300" font-size="11" font-weight="bold" fill="#555" text-anchor="middle">a4-data</text>
+  </g>
+  <path d="M89,154 L89,270" stroke="#3D6FB6" stroke-width="1.6" marker-end="url(#arrB)"/>
+  <path d="M165,154 L165,270" stroke="#3D6FB6" stroke-width="1.6" marker-end="url(#arrB)"/>
+  <path d="M241,154 L241,270" stroke="#3D6FB6" stroke-width="1.6" marker-end="url(#arrB)"/>
+  <path d="M317,154 L317,270" stroke="#3D6FB6" stroke-width="1.6" marker-end="url(#arrB)"/>
+
+  <rect x="460" y="68" width="340" height="322" rx="10" fill="#FFFFFF" stroke="#8A6BB8" stroke-width="2"/>
+  <text x="476" y="90" font-size="13" font-weight="bold" fill="#8A6BB8">COW 快照区域（只读，定格拍下那一刻）</text>
+  <text x="476" y="108" font-size="11" fill="#9A9284">快照索引 / 例外表（只记被改过的块）</text>
+  <g>
+    <rect x="476" y="116" width="66" height="38" rx="4" fill="#FFFFFF" stroke="#8A6BB8" stroke-width="2"/>
+    <rect x="552" y="116" width="66" height="38" rx="4" fill="#FFFFFF" stroke="#8A6BB8" stroke-width="2"/>
+    <rect x="628" y="116" width="66" height="38" rx="4" fill="#FFFFFF" stroke="#8A6BB8" stroke-width="2"/>
+    <rect x="704" y="116" width="66" height="38" rx="4" fill="#FFFFFF" stroke="#8A6BB8" stroke-width="2"/>
+    <text x="509" y="140" font-size="11" font-weight="bold" fill="#2B2B2B" text-anchor="middle">a1</text>
+    <text x="585" y="140" font-size="11" font-weight="bold" fill="#2B2B2B" text-anchor="middle">a2</text>
+    <text x="661" y="140" font-size="11" font-weight="bold" fill="#555" text-anchor="middle">a3</text>
+    <text x="737" y="140" font-size="11" font-weight="bold" fill="#555" text-anchor="middle">a4</text>
+  </g>
+  <text x="476" y="262" font-size="11" fill="#9A9284">旧数据区 / 例外存储（存旧块，上限 128M）</text>
+  <g>
+    <rect x="476" y="272" width="66" height="46" rx="4" fill="#FFFFFF" stroke="#C8463D" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.34;0.4;0.9;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text x="509" y="300" font-size="10" font-weight="bold" fill="#C8463D" text-anchor="middle" opacity="0">
+      <tspan>旧 a1-data</tspan>
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.36;0.42;0.9;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <rect x="552" y="272" width="66" height="46" rx="4" fill="#FFFFFF" stroke="#C8463D" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.36;0.42;0.9;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    <text x="585" y="300" font-size="10" font-weight="bold" fill="#C8463D" text-anchor="middle" opacity="0">
+      <tspan>旧 a2-data</tspan>
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.38;0.44;0.9;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <rect x="628" y="272" width="66" height="46" rx="4" fill="#F7F5FB" stroke="#C9BFE0" stroke-dasharray="5 5"/>
+    <text x="661" y="300" font-size="10" fill="#9A9284" text-anchor="middle">待用</text>
+    <rect x="704" y="272" width="66" height="46" rx="4" fill="#F7F5FB" stroke="#C9BFE0" stroke-dasharray="5 5"/>
+    <text x="737" y="300" font-size="10" fill="#9A9284" text-anchor="middle">待用</text>
+  </g>
+
+  <path d="M661,154 L241,270" stroke="#C8463D" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#arrR)"/>
+  <path d="M737,154 L317,270" stroke="#C8463D" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#arrR)"/>
+  <g opacity="1">
+    <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.55;0.55;0.9;1" dur="12s" repeatCount="indefinite"/>
+    <path d="M509,154 L89,270" stroke="#C8463D" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrR)"/>
+    <path d="M585,154 L165,270" stroke="#C8463D" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrR)"/>
+  </g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.55;0.55;0.9;1" dur="12s" repeatCount="indefinite"/>
+    <path d="M509,154 L509,270" stroke="#C8463D" stroke-width="1.6" marker-end="url(#arrR)"/>
+    <path d="M585,154 L585,270" stroke="#C8463D" stroke-width="1.6" marker-end="url(#arrR)"/>
+  </g>
+
+  <path d="M89,318 L89,352 L509,352 L509,320" fill="none" stroke="#D97757" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrO)" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.25;0.28;0.5;0.55;1" dur="12s" repeatCount="indefinite"/>
+  </path>
+  <path d="M165,318 L165,386 L585,386 L585,320" fill="none" stroke="#D97757" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrO)" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.28;0.31;0.52;0.56;1" dur="12s" repeatCount="indefinite"/>
+  </path>
+  <circle r="6" fill="#D97757" opacity="0">
+    <animateMotion dur="12s" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.25;0.42;1" path="M89,318 L89,352 L509,352 L509,320" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.24;0.27;0.4;0.44;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="6" fill="#D97757" opacity="0">
+    <animateMotion dur="12s" calcMode="linear" keyPoints="0;0.28;0.45;1" keyTimes="0;0.28;0.45;1" path="M165,318 L165,386 L585,386 L585,320" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.27;0.3;0.43;0.47;1" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <text x="299" y="347" font-size="10" fill="#D97757" text-anchor="middle" opacity="0">
+    <tspan>复制旧 a1</tspan>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.28;0.32;0.45;0.5;1" dur="12s" repeatCount="indefinite"/>
+  </text>
+  <text x="375" y="381" font-size="10" fill="#D97757" text-anchor="middle" opacity="0">
+    <tspan>复制旧 a2</tspan>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.3;0.34;0.47;0.52;1" dur="12s" repeatCount="indefinite"/>
+  </text>
+</svg>
